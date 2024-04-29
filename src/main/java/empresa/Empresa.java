@@ -1,2 +1,4 @@
-package main.java.empresa;public class Empresa {
+package main.java.empresa;
+
+public class Empresa {
 }

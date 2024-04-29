@@ -1,2 +1,4 @@
-package main.java.empresa.produtos;public class Seguranca {
+package main.java.empresa.materiais;
+
+public class Seguranca {
 }

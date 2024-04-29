@@ -1,2 +1,4 @@
-package main.java.empresa.funcionarios;public class Departamento {
+package main.java.empresa.departamentos;
+
+public class Departamento {
 }
