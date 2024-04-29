@@ -67,9 +67,7 @@ public class Funcionario {
         return "Funcionario{" +
                 "matricula=" + getMatricula() +
                 ", nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
                 ", cpf=" + cpf +
-                ", endereco='" + endereco + '\'' +
                 ", dataNascimento=" + dataNascimento +
                 '}';
     }

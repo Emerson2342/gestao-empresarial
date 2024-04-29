@@ -9,16 +9,16 @@ public class Main {
 
         ListaFuncionarios novoFuncionario = new ListaFuncionarios();
         int opcao = -1;
+        System.out.println("*********Cadastro de funcionários***********");
+        System.out.println("Opções");
+        System.out.println("Digite a opção desejada:");
+        System.out.println("1 - Cadastrar novo funcionário.");
+        System.out.println("2 - Alterar dados do funcionário.");
+        System.out.println("3 - Exibir lista de funcionários.");
+        System.out.println("4 - Apagar funcionário.");
+        System.out.println("0 - Sair.");
 
         while (opcao != 0) {
-            System.out.println("*********Cadastro de funcionários***********");
-            System.out.println("Opções");
-            System.out.println("Digite a opção desejada:");
-            System.out.println("1 - Cadastrar novo funcionário.");
-            System.out.println("2 - Alterar dados do funcionário.");
-            System.out.println("3 - Exibir lista de funcionários.");
-            System.out.println("4 - Apagar funcionário.");
-            System.out.println("0 - Sair.");
 
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpa o buffer do input
