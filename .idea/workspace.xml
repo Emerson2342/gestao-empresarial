@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="" />
+    <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/classes/Cargo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/classes/Material.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/listas/ListaCargo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamentos/Departamento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/funcionario/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/classes/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/funcionario/ListaFuncionarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/listas/ListaFuncionarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/materiais/Brigada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/materiais/Limpeza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/materiais/Seguranca.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
