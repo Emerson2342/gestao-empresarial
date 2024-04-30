@@ -1,22 +1,29 @@
 package main.java.empresa.funcionario;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Funcionario {
     private static int contadorMatricula = 1;
     private int matricula;
+    private LocalDate admissao;
     private String nome;
     private String departamento;
-    private String funcao;
+    private String cargo;
     private String telefone;
     private long cpf;
-    private String endereco;
-    private Date dataNascimento;
+    private int dataNascimento;
+    private double salario;
 
-    public Funcionario(String nome, long cpf){
-       matricula = contadorMatricula++;
-       this.nome = nome;
-       this.cpf = cpf;
+
+    public Funcionario(LocalDate admissao, String nome, long cpf, String cargo, int dataNascimento, double salario) {
+        matricula = contadorMatricula++;
+        this.admissao = admissao;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.cargo = cargo;
+        this.dataNascimento = dataNascimento;
+        this.salario = salario;
     }
 
     public String getMatricula() {
@@ -24,51 +31,16 @@ public class Funcionario {
     }
 
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public String funcionarioCadastrado(){
-        return "Matrícula: " + getMatricula() + "\n"+
-                "Nome: " + nome+"\n"+
-                "CPF: " + cpf;
-    }
-
     @Override
     public String toString() {
-        return "Funcionario{" +
-                "matricula=" + getMatricula() +
-                ", nome='" + nome + '\'' +
-                ", cpf=" + cpf +
-                ", dataNascimento=" + dataNascimento +
-                '}';
+        return "Matricula: " + getMatricula() + "; \n" +
+                "Admissao: " + admissao + "; \n" +
+                "Nome: " + nome + "; \n" +
+                "Departamento: " + departamento + "; \n" +
+                "Cargo: " + cargo + "; \n" +
+                "Telefone: " + telefone + "; \n" +
+                "CPF: " + cpf + "; \n" +
+                "Data de Nascimento: " + dataNascimento + "; \n" +
+                "Salário: " + salario;
     }
 }

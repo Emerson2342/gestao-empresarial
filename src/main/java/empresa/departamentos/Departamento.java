@@ -1,4 +1,11 @@
 package main.java.empresa.departamentos;
 
-public class Departamento {
+public enum Departamento {
+    GERENCIA,
+    JURIDICO,
+    ADMINISTRACAO,
+    OPERACIONAL,
+    SAUDE,
+    ALMOXARIFE,
+    EXTERNO
 }
