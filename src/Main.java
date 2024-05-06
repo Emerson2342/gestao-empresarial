@@ -32,9 +32,6 @@ public class Main {
         novoFuncionario.listaFuncionarios();
 
 
-
-
-
         scanner.close();
     }
 }
