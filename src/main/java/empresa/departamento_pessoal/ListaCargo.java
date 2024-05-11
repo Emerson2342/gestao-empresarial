@@ -1,11 +1,10 @@
-package main.java.empresa.listas;
-import main.java.empresa.classes.Cargo;
+package main.java.empresa.departamento_pessoal;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class ListaCargo {
     private static Set<Cargo> cargosList = new HashSet<>();
-
 
     private static void cargosSalvos() {
         adicionarCargo(1, "Pessoal", "Assistente", 4500);
@@ -17,7 +16,6 @@ public class ListaCargo {
     public static void carregarCargos() {
         cargosSalvos();
     }
-
 
     public static void adicionarCargo(int codigo, String departamento, String cargo, double salario) {
         cargosList.add(new Cargo(codigo,departamento, cargo, salario ));
@@ -49,8 +47,6 @@ public class ListaCargo {
         }
         return 0;
     }
-
-
 
     public static Set<Cargo> listaCargos() {
         for (Cargo c : cargosList) {

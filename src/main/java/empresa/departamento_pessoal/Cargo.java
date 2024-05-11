@@ -1,6 +1,6 @@
-package main.java.empresa.classes;
+package main.java.empresa.departamento_pessoal;
 
-public class Cargo {
+public class Cargo{
     private int cod;
     private String cargo;
     private String departamento;
@@ -52,4 +52,5 @@ public class Cargo {
                 "Cargo: " + cargo + "; \n" +
                 "Salário: " + salario + "; \n";
     }
+
 }

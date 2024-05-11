@@ -1,5 +1,7 @@
-import main.java.empresa.listas.ListaCargo;
-import main.java.empresa.listas.ListaFuncionarios;
+import main.java.empresa.departamento_pessoal.Cadastro;
+import main.java.empresa.departamento_pessoal.FolhaDePagamento;
+import main.java.empresa.departamento_pessoal.ListaCargo;
+import main.java.empresa.departamento_pessoal.ListaFuncionarios;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -9,28 +11,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ListaCargo.carregarCargos();
 
-        LocalDate admissao = LocalDate.now();
-        ListaFuncionarios novoFuncionario = new ListaFuncionarios();
+        //cadastrando funcionário
+        Cadastro novoFuncionario1 = new Cadastro();
+        Cadastro novoFuncionario2 = new Cadastro();
+        Cadastro novoFuncionario3 = new Cadastro();
+        //exibindo a lista de funcionários
+        FolhaDePagamento folhaDePagamento = new FolhaDePagamento();
 
-        String nome = "Emerson";
-        String cpf = "02970248174";
-        String dataNascimento = "22091990";
-        String telefone = "61 99835-4398";
-
-        //opção de cargo, departamento e salário
-        int opcao = 1;
-
-        String cargo = ListaCargo.buscarCargoPorCodigo(opcao);
-        String departamento = ListaCargo.buscarDepartamentoPorCodigo(opcao);
-        double salario = ListaCargo.buscarSalarioPorCodigo(opcao);
-
-        //criando novo funcionário
-        novoFuncionario.adicionarFuncionario(admissao, nome, cpf, departamento, cargo, dataNascimento, salario, telefone);
-        System.out.println("Funcionário cadastrado com sucesso!");
-
-        //mostrar a lista de funcionários
-        novoFuncionario.listaFuncionarios();
-
+        folhaDePagamento.ListaFuncionarios();
+        ListaCargo.listaCargos();
 
         scanner.close();
     }

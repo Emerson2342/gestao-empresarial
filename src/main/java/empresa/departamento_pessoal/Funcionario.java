@@ -1,4 +1,4 @@
-package main.java.empresa.classes;
+package main.java.empresa.departamento_pessoal;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;

@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cadastro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/ControleDePonto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/FolhaDePagamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/servicos/servicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/servicos/servicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/classes/Cargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cargo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/classes/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/classes/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/almoxarifado/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/listas/ListaCargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/ListaCargo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/listas/ListaFuncionarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/ListaFuncionarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/servicos/servicos.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +41,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Emerson2342/gestao-empresarial.git&quot;,
-    &quot;accountId&quot;: &quot;3e86ca94-1ed4-4372-af9f-ea0486fc8d26&quot;
+    &quot;url&quot;: &quot;https://github.com/Emerson2342/gestao-empresarial&quot;,
+    &quot;accountId&quot;: &quot;65ad1622-bc1f-46e0-9c8c-4661efd0a9b1&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -46,16 +54,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Language Defaults&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ControleDePonto.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

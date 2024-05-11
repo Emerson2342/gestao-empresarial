@@ -1,4 +1,4 @@
-package main.java.empresa.classes;
+package main.java.empresa.almoxarifado;
 
 public class Material {
     private String cod;
