@@ -56,7 +56,7 @@ public class ControleDePonto {
 
         pessoa.entrada();
         System.out.println("Digite para registrar a saída");
-        String sair = scanner.next();
+        scanner.next();
 
         pessoa.saida();
         pessoa.calcularHoras();
