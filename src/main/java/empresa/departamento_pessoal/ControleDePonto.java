@@ -17,7 +17,26 @@ public class ControleDePonto {
         return saida = LocalDateTime.now();
     }
 
-    private void calcularHoras() {
+    public LocalDateTime getEntrada() {
+        return entrada;
+    }
+    public void setEntrada(LocalDateTime entrada){
+        this.entrada = entrada;
+    }
+
+    public LocalDateTime getSaida(){
+        return saida;
+    }
+
+    public void setSaida(LocalDateTime saida){
+        this.saida = saida;
+    }
+    public  int getSegundosTrabalhados(){
+        return segundosTrabalhados;
+    }
+
+    protected void calcularHoras() {
+
         int horaEntrada = entrada.getHour() * 3600;
         int minEntrada = entrada.getMinute() * 60;
         int secEntrada = entrada.getSecond();
@@ -46,13 +65,14 @@ public class ControleDePonto {
         return "Controle De Ponto" + "\n" +
                 "Entrada: " + entradaFormatada + "\n" +
                 "Saida: " + saidaFormatada + "\n" +
-                "Horas Trabalhadas: " + horasFormatadas + "h:" + minutosFormatados+ "m:" + segundosFormatados+"s";
+                "Horas Trabalhadas: " + horasFormatadas + "h:" + minutosFormatados + "m:" + segundosFormatados + "s";
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         ControleDePonto pessoa = new ControleDePonto();
+
 
         pessoa.entrada();
         System.out.println("Digite para registrar a saída");
