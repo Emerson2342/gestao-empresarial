@@ -32,8 +32,6 @@ public class JMain extends JFrame {
         });
 
 
-
-
         dpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

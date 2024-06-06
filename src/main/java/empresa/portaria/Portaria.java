@@ -1,5 +1,7 @@
 package main.java.empresa.portaria;
 
+import DAO.PortariaDAO;
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,7 +37,7 @@ public class Portaria extends Visitante {
     public Set<Visitante> listaVisitante() {
         for (Visitante v : visitanteList) {
             System.out.println(v);
-            System.out.println("************asdfasdfasdfsd****************");
+            System.out.println("**************************");
         }
         return visitanteList;
     }
@@ -58,10 +60,7 @@ public class Portaria extends Visitante {
         //  Scanner scanner = new Scanner(System.in);
 
 
-        Portaria novo = Portaria.getInssstance();
-        novo.adicionarVisitante(456, "Emerson", "02970248174", LocalDateTime.now());
-        novo.adicionarVisitante(123, "Maria", "02975816179", LocalDateTime.now());
-        novo.listaVisitante();
+
 
 
 //        System.out.println("Digite a matrícula");

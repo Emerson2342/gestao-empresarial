@@ -10,7 +10,7 @@ public class Visitante {
     private String nome;
     private String cpf;
     private LocalDateTime entrada;
-    // private LocalDateTime saida;
+    private LocalDateTime saida;
 
     //construtor entrada de visitantes
     public Visitante(int matricula, String nome, String cpf, LocalDateTime entrada) {
@@ -47,6 +47,22 @@ public class Visitante {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public LocalDateTime getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(LocalDateTime entrada) {
+        this.entrada = entrada;
+    }
+
+    public LocalDateTime getSaida() {
+        return saida;
+    }
+
+    public void setSaida(LocalDateTime saida) {
+        this.saida = saida;
     }
 
     @Override
