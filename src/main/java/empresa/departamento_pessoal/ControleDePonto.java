@@ -35,7 +35,7 @@ public class ControleDePonto {
         return segundosTrabalhados;
     }
 
-    protected void calcularHoras() {
+    public void calcularHoras() {
 
         int horaEntrada = entrada.getHour() * 3600;
         int minEntrada = entrada.getMinute() * 60;
@@ -72,8 +72,6 @@ public class ControleDePonto {
         Scanner scanner = new Scanner(System.in);
 
         ControleDePonto pessoa = new ControleDePonto();
-
-
         pessoa.entrada();
         System.out.println("Digite para registrar a saída");
         scanner.next();

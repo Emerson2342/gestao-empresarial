@@ -17,7 +17,7 @@ public class ListaFuncionarios {
             instssance = new ListaFuncionarios();
         }
         return instssance;
-    };
+    }
 
     public void adicionarFuncionario(LocalDate admissao, String nome, String cpf,String departamento, String cargo, String dataNascimento, double salario, String telefone){
         funcionarioList.add(new Funcionario( admissao, nome, cpf, departamento,cargo, dataNascimento, salario, telefone));
