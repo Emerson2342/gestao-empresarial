@@ -20,6 +20,7 @@ public class JPortaria extends JFrame {
     private JTextField cpfField;
     private JButton buttonRegistrar;
     private JButton buttonConsultar;
+    private JButton buttonVoltar;
 
     private int matricula;
     private String nome;
@@ -29,7 +30,7 @@ public class JPortaria extends JFrame {
     public JPortaria() {
         setContentPane(PortariaPanel);
         setTitle("Portaria");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(510, 400);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -73,11 +74,12 @@ public class JPortaria extends JFrame {
                     Portaria novo = Portaria.getInssstance();
                     novo.adicionarVisitante(matricula, nome, cpf, LocalDateTime.now());
                     novo.listaVisitante();
-
                     Visitante ultimoRegistro = novo.listaVisitante().iterator().next();
 
                     new PortariaDAO().resgistrarEntrada(ultimoRegistro);
-                    dispose();
+                    matriculaField.setText("");
+                    nomeField.setText(null);
+                    cpfField.setText("");
                 }
 
             }
@@ -85,10 +87,18 @@ public class JPortaria extends JFrame {
         buttonConsultar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<Visitante> visitantes = new PortariaDAO().listarVisitantes();
+                //dispose();
+                JRegistroPortaria jRegistroPortaria = new JRegistroPortaria();
+                jRegistroPortaria.setLocationRelativeTo(null);
+            }
+        });
+        buttonVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-                JRegistroPortaria jRegistroPortaria = new JRegistroPortaria(visitantes);
-                jRegistroPortaria.setLocationRelativeTo(jRegistroPortaria);
+                dispose();
+                JMain jMain = new JMain();
+                jMain.setLocationRelativeTo(null);
             }
         });
     }

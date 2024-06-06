@@ -13,7 +13,7 @@ public class Visitante {
     private LocalDateTime saida;
 
     //construtor entrada de visitantes
-    public Visitante(int matricula, String nome, String cpf, LocalDateTime entrada) {
+    public Visitante( int matricula, String nome, String cpf, LocalDateTime entrada) {
         this.matricula = matricula;
         this.nome = nome;
         this.cpf = cpf;

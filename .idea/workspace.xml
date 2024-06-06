@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JRegistroPortaria.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JRegistroPortaria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conexao/Conexao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ModeloTabela.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestão Empresarial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestão Empresarial.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JPortaria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JPortaria.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JPortaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JPortaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/FolhaDePagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/FolhaDePagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/portaria/Portaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/portaria/Portaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JRegistroPortaria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JRegistroPortaria.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JRegistroPortaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JRegistroPortaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conexao/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conexao/Conexao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/empresa/portaria/Visitante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/portaria/Visitante.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,27 +53,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ControleDePonto.executor": "Run",
-    "Application.JMain.executor": "Run",
-    "Application.JPortaria.executor": "Run",
-    "Application.JRegistroPortaria.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Portaria.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "370",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Meus Documentos/IntelliJ/Java/Empresa/lib/mysql-connector-j-8.3.0.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ControleDePonto.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JPortaria.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JRegistroPortaria.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Portaria.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;292&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Meus Documentos/IntelliJ/Java/Empresa/lib/mysql-connector-j-8.3.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.JRegistroPortaria">
+}</component>
+  <component name="RunManager" selected="Application.JPortaria">
     <configuration name="JMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JMain" />
       <module name="Gestão Empresarial" />
@@ -127,11 +125,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JRegistroPortaria" />
         <item itemvalue="Application.JPortaria" />
+        <item itemvalue="Application.JMain" />
+        <item itemvalue="Application.JRegistroPortaria" />
         <item itemvalue="Application.Portaria" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.JMain" />
       </list>
     </recent_temporary>
   </component>

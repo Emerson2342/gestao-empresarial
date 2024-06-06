@@ -14,7 +14,7 @@ public class JMain extends JFrame {
     public JMain() {
         setContentPane(MainPanel);
         setTitle("Gestão Empresarial");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(300, 300);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -46,8 +46,6 @@ public class JMain extends JFrame {
                 JOptionPane.showMessageDialog(JMain.this, "Almoxarifado");
             }
         });
-
-
     }
 
     public static void main(String[] args) {

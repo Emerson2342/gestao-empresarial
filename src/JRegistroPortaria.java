@@ -1,46 +1,61 @@
 import DAO.PortariaDAO;
 import main.java.empresa.portaria.Visitante;
+import model.ModeloTabela;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class JRegistroPortaria extends JFrame {
     private JPanel RegistroPortaria;
     private JTable table;
+    private JButton buttonFechar;
 
-
-    public JRegistroPortaria(List<Visitante> visitantes) {
+    public JRegistroPortaria() {
         setTitle("Registro de Portaria");
-        setContentPane(RegistroPortaria);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(600, 400);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setSize(900, 700);
         setLocationRelativeTo(null);
-        setVisible(true);
 
-        String[] colunas = {"Matrícula", "Nome", "CPF", "Entrada", "Saída"};
-        DefaultTableModel model = new DefaultTableModel(colunas, 0);
-        for (Visitante v : visitantes) {
-            Object[] row = {
-                    v.getMatricula(),
-                    v.getNome(),
-                    v.getCpf(),
-                    v.getEntrada(),
-                    v.getSaida()};
-            model.addRow(row);
-        }
-        table = new JTable(model);
+
+        RegistroPortaria = new JPanel(new BorderLayout());
+        setContentPane(RegistroPortaria);
+
+        //cria a lista vindo do banco de dados
+        List<Visitante> visitantes = new PortariaDAO().listarVisitantes();
+        //instancia o model da tabela
+        ModeloTabela modeloTabela = new ModeloTabela(visitantes);
+
+        //cria a tabela com o modelo
+        table = new JTable(modeloTabela);
+        //adiciona a tabela no JScrollPane
         JScrollPane scrollPane = new JScrollPane(table);
-        getContentPane().add(scrollPane, BorderLayout.CENTER);
 
+        //adicionar o JScrollPane ao RegistroPortaria
+        RegistroPortaria.add(scrollPane, BorderLayout.CENTER);
+
+        RegistroPortaria.setBorder(new EmptyBorder(25, 15, 55, 15));
+
+        setVisible(true);
+        //table.setModel(modeloTabela);
+        buttonFechar = new JButton("Voltar");
+        buttonFechar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        RegistroPortaria.add(buttonFechar, BorderLayout.SOUTH);
 
     }
 
     public static void main(String[] args) {
-        List<Visitante> visitantes = new PortariaDAO().listarVisitantes();
+        SwingUtilities.invokeLater(() -> new JRegistroPortaria());
 
-        SwingUtilities.invokeLater(() -> new JRegistroPortaria(visitantes));
+
     }
 
 }
