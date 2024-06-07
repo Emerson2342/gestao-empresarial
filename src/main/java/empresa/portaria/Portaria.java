@@ -24,8 +24,8 @@ public class Portaria extends Visitante {
     }
 
 
-    public void adicionarVisitante(int matricula, String nome, String cpf, LocalDateTime entrada) {
-        visitanteList.add(new Visitante(matricula, nome, cpf, entrada));
+    public void adicionarVisitante(int matricula, String nome, String cpf,String telefone, LocalDateTime entrada) {
+        visitanteList.add(new Visitante( matricula, nome, cpf,telefone, entrada));
     }
 
 

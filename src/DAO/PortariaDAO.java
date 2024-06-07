@@ -11,7 +11,7 @@ import java.util.List;
 public class PortariaDAO {
 
     public int resgistrarEntrada(Visitante visitante) {
-        String sql = "INSERT INTO REGISTRO (MATRICULA, NOME, CPF, ENTRADA, SAIDA) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO REGISTRO (MATRICULA, NOME, CPF, TELEFONE, ENTRADA, SAIDA) VALUES (?,?,?,?,?,?)";
         int generatedId = -1;
 
         //PreparedStatement ps = null;
@@ -21,8 +21,9 @@ public class PortariaDAO {
             ps.setInt(1, visitante.getMatricula());
             ps.setString(2, visitante.getNome());
             ps.setString(3, visitante.getCpf());
-            ps.setObject(4, visitante.getEntrada());
-            ps.setObject(5, visitante.getSaida());
+            ps.setString(4, visitante.getTelefone());
+            ps.setObject(5, visitante.getEntrada());
+            ps.setObject(6, visitante.getSaida());
 
             ps.execute();
           //  ps.close();
@@ -51,10 +52,11 @@ public class PortariaDAO {
                 int matricula = rs.getInt("MATRICULA");
                 String nome = rs.getString("NOME");
                 String cpf = rs.getString("CPF");
+                String telefone = rs.getString("TELEFONE");
                 LocalDateTime entrada = rs.getTimestamp("ENTRADA").toLocalDateTime();
                 LocalDateTime saida = rs.getTimestamp("SAIDA") != null ? rs.getTimestamp("SAIDA").toLocalDateTime() : null;
 
-                Visitante visitante = new Visitante(matricula, nome, cpf, entrada);
+                Visitante visitante = new Visitante( matricula, nome,cpf,telefone, entrada);
                 visitante.setSaida(saida);
                 visitantes.add(visitante);
             }

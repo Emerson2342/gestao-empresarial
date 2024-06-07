@@ -9,14 +9,16 @@ public class Visitante {
     private int matricula;
     private String nome;
     private String cpf;
+    private String telefone;
     private LocalDateTime entrada;
     private LocalDateTime saida;
 
     //construtor entrada de visitantes
-    public Visitante( int matricula, String nome, String cpf, LocalDateTime entrada) {
+    public Visitante(int matricula, String nome, String cpf, String telefone, LocalDateTime entrada) {
         this.matricula = matricula;
         this.nome = nome;
         this.cpf = cpf;
+        this.telefone = telefone;
         this.entrada = entrada;
 
     }
@@ -47,6 +49,14 @@ public class Visitante {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public LocalDateTime getEntrada() {

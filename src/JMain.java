@@ -19,7 +19,6 @@ public class JMain extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
-
         portariaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,7 +48,21 @@ public class JMain extends JFrame {
     }
 
     public static void main(String[] args) {
-        new JMain();
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        UIManager.put("Button.focus", UIManager.get("Button.background"));
+
+        SwingUtilities.invokeLater(() ->  new JMain());
+
     }
 
 }

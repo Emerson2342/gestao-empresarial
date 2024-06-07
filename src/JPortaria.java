@@ -3,11 +3,11 @@ import main.java.empresa.portaria.Portaria;
 import main.java.empresa.portaria.Visitante;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class JPortaria extends JFrame {
 
@@ -21,19 +21,58 @@ public class JPortaria extends JFrame {
     private JButton buttonRegistrar;
     private JButton buttonConsultar;
     private JButton buttonVoltar;
+    private JButton btnRegistrarSaida;
+    private JTextField telefoneField;
 
     private int matricula;
     private String nome;
     private String cpf;
+    private String telefone;
 
 
     public JPortaria() {
         setContentPane(PortariaPanel);
         setTitle("Portaria");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(510, 400);
+        setSize(500, 400);
         setLocationRelativeTo(null);
         setVisible(true);
+        buttonRegistrar.setEnabled(false);
+
+        DocumentListener documentListener = new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                checkFields();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                checkFields();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                checkFields();
+            }
+
+            private boolean isValidCPF(String cpf){
+                return cpf.matches("\\d{11}");
+            }
+
+            private void checkFields() {
+                boolean allFieldsFilled =
+                        !matriculaField.getText().trim().isEmpty()
+                        &&
+                        !nomeField.getText().trim().isEmpty()
+                        &&
+                        isValidCPF(cpfField.getText().trim());
+                buttonRegistrar.setEnabled(allFieldsFilled);
+            }
+        };
+
+        matriculaField.getDocument().addDocumentListener(documentListener);
+        nomeField.getDocument().addDocumentListener(documentListener);
+        cpfField.getDocument().addDocumentListener(documentListener);
 
 
         buttonRegistrar.addActionListener(new ActionListener() {
@@ -42,6 +81,7 @@ public class JPortaria extends JFrame {
                 String matriculaText = matriculaField.getText();
                 String cpf = cpfField.getText();
                 nome = nomeField.getText();
+                telefone = telefoneField.getText();
 
                 try {
                     matricula = Integer.parseInt(matriculaText);
@@ -67,12 +107,13 @@ public class JPortaria extends JFrame {
 
 
                 if (matricula > 0 && nome != "" && cpf.length() == 11) {
+
                     JOptionPane.showMessageDialog(
                             JPortaria.this,
                             "Registro Cadastrado com sucesso!");
 
                     Portaria novo = Portaria.getInssstance();
-                    novo.adicionarVisitante(matricula, nome, cpf, LocalDateTime.now());
+                    novo.adicionarVisitante(matricula, nome, cpf,telefone, LocalDateTime.now());
                     novo.listaVisitante();
                     Visitante ultimoRegistro = novo.listaVisitante().iterator().next();
 
@@ -80,6 +121,7 @@ public class JPortaria extends JFrame {
                     matriculaField.setText("");
                     nomeField.setText(null);
                     cpfField.setText("");
+                    telefoneField.setText("");
                 }
 
             }
@@ -104,6 +146,16 @@ public class JPortaria extends JFrame {
     }
 
     public static void main(String[] args) {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         SwingUtilities.invokeLater(() -> new JPortaria());
 
 
