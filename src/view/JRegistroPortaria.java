@@ -1,7 +1,9 @@
+package view;
+
 import DAO.PortariaDAO;
 import main.java.empresa.portaria.Visitante;
-import view.LinhaListradas;
-import view.ModeloTabela;
+import model.LinhaListradas;
+import model.ModeloTabela;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

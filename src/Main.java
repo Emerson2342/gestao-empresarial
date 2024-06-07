@@ -1,7 +1,5 @@
 
-import main.java.empresa.departamento_pessoal.*;
-import java.time.LocalDateTime;
-import java.util.Scanner;
+import view.JMain;
 
 public class Main {
 

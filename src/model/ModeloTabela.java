@@ -1,9 +1,7 @@
-package view;
+package model;
 
-import DAO.PortariaDAO;
 import main.java.empresa.portaria.Visitante;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
