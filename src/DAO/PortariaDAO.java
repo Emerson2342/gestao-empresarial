@@ -14,8 +14,6 @@ public class PortariaDAO {
         String sql = "INSERT INTO REGISTRO (MATRICULA, NOME, CPF, TELEFONE, ENTRADA, SAIDA) VALUES (?,?,?,?,?,?)";
         int generatedId = -1;
 
-        //PreparedStatement ps = null;
-
         try (Connection conn = Conexao.getConexao();
              PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, visitante.getMatricula());
@@ -26,7 +24,7 @@ public class PortariaDAO {
             ps.setObject(6, visitante.getSaida());
 
             ps.execute();
-          //  ps.close();
+            //  ps.close();
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
@@ -37,8 +35,52 @@ public class PortariaDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-         return generatedId;
+        return generatedId;
     }
+
+
+    public boolean registrarSaida(int matricula) {
+        String sql = "UPDATE controleportaria.registro SET saida = NOW() WHERE id = (SELECT id FROM(SELECT id FROM controleportaria.registro WHERE matricula = ? ORDER BY entrada DESC LIMIT 1) AS subquery)";
+        boolean sucesso = false;
+
+        try (Connection conn = Conexao.getConexao();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, matricula);
+            int rowsAffected = ps.executeUpdate();
+            sucesso = rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sucesso;
+    }
+
+    public Visitante selecionarVisitante(int matricula) {
+        String sql = "SELECT * FROM controleportaria.registro WHERE matricula = ? ORDER BY entrada DESC LIMIT 1";
+
+        Visitante visitanteSelecionado = null;
+
+        try (Connection conn = Conexao.getConexao();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, matricula);//parâmetro da matrícula
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    String nome = rs.getString("NOME");
+                    String cpf = rs.getString("CPF");
+                    String telefone = rs.getString("TELEFONE");
+                    LocalDateTime entrada = rs.getTimestamp("ENTRADA").toLocalDateTime();
+                    LocalDateTime saida = rs.getTimestamp("SAIDA") != null ? rs.getTimestamp("SAIDA").toLocalDateTime() : null;
+                    visitanteSelecionado = new Visitante(matricula, nome, cpf, telefone, entrada, saida);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return visitanteSelecionado;
+    }
+
 
     public List<Visitante> listarVisitantes() {
         String sql = "SELECT * FROM REGISTRO";
@@ -56,7 +98,7 @@ public class PortariaDAO {
                 LocalDateTime entrada = rs.getTimestamp("ENTRADA").toLocalDateTime();
                 LocalDateTime saida = rs.getTimestamp("SAIDA") != null ? rs.getTimestamp("SAIDA").toLocalDateTime() : null;
 
-                Visitante visitante = new Visitante( matricula, nome,cpf,telefone, entrada);
+                Visitante visitante = new Visitante(matricula, nome, cpf, telefone, entrada);
                 visitante.setSaida(saida);
                 visitantes.add(visitante);
             }

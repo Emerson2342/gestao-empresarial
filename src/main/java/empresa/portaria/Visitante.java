@@ -20,7 +20,15 @@ public class Visitante {
         this.cpf = cpf;
         this.telefone = telefone;
         this.entrada = entrada;
-
+    }
+    //construtor saída de visitantes
+    public Visitante(int matricula, String nome, String cpf, String telefone, LocalDateTime entrada, LocalDateTime saida) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.entrada = entrada;
+        this.saida = saida;
     }
 
     public Visitante() {

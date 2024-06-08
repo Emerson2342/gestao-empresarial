@@ -10,13 +10,14 @@ public class JMain extends JFrame {
     private JButton portariaButton;
     private JButton dpButton;
     private JButton almoxarifadoButton;
+    private JButton btnFechar;
 
 
     public JMain() {
         setContentPane(MainPanel);
         setTitle("Gestão Empresarial");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(300, 300);
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setVisible(true);
 
@@ -36,7 +37,9 @@ public class JMain extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JOptionPane.showMessageDialog(JMain.this, "Departamento Pessoal");
+                dispose();
+                JDepartamentoPessoal dp = new JDepartamentoPessoal();
+                dp.setLocationRelativeTo(dp);
             }
         });
         almoxarifadoButton.addActionListener(new ActionListener() {
@@ -44,6 +47,12 @@ public class JMain extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 JOptionPane.showMessageDialog(JMain.this, "Almoxarifado");
+            }
+        });
+        btnFechar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
             }
         });
     }
@@ -63,7 +72,6 @@ public class JMain extends JFrame {
         UIManager.put("Button.focus", UIManager.get("Button.background"));
 
         SwingUtilities.invokeLater(() ->  new JMain());
-
     }
 
 }
