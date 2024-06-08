@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Funcionario {
     private static int contadorMatricula = 1;
-    private int matricula;
+    private int matricula = 500;
     private LocalDate admissao;
     private String nome;
     private String departamento;
@@ -26,7 +26,7 @@ public class Funcionario {
         this.dataNascimento = dataNascimento;
         this.salario = salario;
         this.departamento = departamento;
-        this.telefone=telefone;
+        this.telefone = telefone;
     }
 
     public String getMatricula() {

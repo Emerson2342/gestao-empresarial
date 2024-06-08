@@ -62,7 +62,7 @@ public class PortariaDAO {
         try (Connection conn = Conexao.getConexao();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setInt(1, matricula);//parâmetro da matrícula
+            ps.setInt(1, matricula);//parâmetro matrícula
 
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
