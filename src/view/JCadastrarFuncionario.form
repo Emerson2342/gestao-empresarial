@@ -57,7 +57,10 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+          <enabled value="false"/>
+        </properties>
       </component>
       <component id="ada5c" class="javax.swing.JLabel">
         <constraints>
@@ -99,16 +102,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="39d5a" class="javax.swing.JTextField" binding="cpfField">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="170" height="30"/>
-            <preferred-size width="170" height="30"/>
-            <maximum-size width="170" height="30"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="918da" class="javax.swing.JTextField" binding="departamentoField">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
@@ -120,16 +113,6 @@
         <properties>
           <text value=""/>
         </properties>
-      </component>
-      <component id="86bb3" class="javax.swing.JTextField" binding="telefoneField">
-        <constraints>
-          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="170" height="30"/>
-            <preferred-size width="170" height="30"/>
-            <maximum-size width="170" height="30"/>
-          </grid>
-        </constraints>
-        <properties/>
       </component>
       <component id="dc24c" class="javax.swing.JTextField" binding="nascimentoField">
         <constraints>
@@ -244,6 +227,26 @@
         <properties>
           <text value="Cadastrar"/>
         </properties>
+      </component>
+      <component id="4f382" class="javax.swing.JFormattedTextField" binding="cpfField">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="170" height="30"/>
+            <preferred-size width="170" height="30"/>
+            <maximum-size width="170" height="30"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="4b426" class="javax.swing.JFormattedTextField" binding="telefoneField">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="170" height="30"/>
+            <preferred-size width="170" height="30"/>
+            <maximum-size width="170" height="30"/>
+          </grid>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>

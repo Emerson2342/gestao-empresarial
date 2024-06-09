@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DAO/CadastroFuncionarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/CadastroFuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CadastroFuncionarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cadastro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/FolhaDePagamento.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/ListaFuncionarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/portaria/Portaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/portaria/Portaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/portaria/Visitante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/portaria/Visitante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.java" afterDir="false" />
     </list>
@@ -40,6 +44,9 @@
     &quot;accountId&quot;: &quot;3e86ca94-1ed4-4372-af9f-ea0486fc8d26&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -79,7 +86,7 @@
       <recent name="F:\Meus Documentos\IntelliJ\Java\Empresa\src\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JCadastrarFuncionario">
+  <component name="RunManager" selected="Application.view.JMain">
     <configuration name="JCadastrarFuncionario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.JCadastrarFuncionario" />
       <module name="Gestão Empresarial" />
@@ -148,9 +155,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.view.JMain" />
         <item itemvalue="Application.JCadastrarFuncionario" />
         <item itemvalue="Application.JDepartamentoPessoal" />
-        <item itemvalue="Application.view.JMain" />
         <item itemvalue="Application.view.JPortaria" />
         <item itemvalue="Application.JPortaria" />
       </list>

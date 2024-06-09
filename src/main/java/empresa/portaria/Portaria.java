@@ -12,7 +12,6 @@ public class Portaria extends Visitante {
     private Set<Visitante> visitanteList;
 
     private Portaria() {
-
         this.visitanteList = new HashSet<>();
     }
 
@@ -23,16 +22,10 @@ public class Portaria extends Visitante {
         return instssance;
     }
 
-
     public void adicionarVisitante(int matricula, String nome, String cpf,String telefone, LocalDateTime entrada) {
         visitanteList.add(new Visitante( matricula, nome, cpf,telefone, entrada));
     }
 
-
-//    public LocalDateTime registrarSaida(LocalDateTime saida) {
-//        setSaida(saida);
-//        return getSaida();
-//    }
 
     public Set<Visitante> listaVisitante() {
         for (Visitante v : visitanteList) {

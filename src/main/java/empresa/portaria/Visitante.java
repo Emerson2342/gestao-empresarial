@@ -32,7 +32,6 @@ public class Visitante {
     }
 
     public Visitante() {
-
     }
 
     public int getMatricula() {

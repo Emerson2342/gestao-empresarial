@@ -15,11 +15,12 @@ public class Funcionario {
     private String cpf;
     private String dataNascimento;
     private double salario;
+    private String endereco;
 
-
-    public Funcionario(LocalDate admissao, String nome, String cpf, String departamento, String cargo, String dataNascimento, double salario, String telefone) {
+    //construtor add novo funcionário
+    public Funcionario(String nome, String cpf, String departamento, String cargo, String dataNascimento, double salario, String telefone, String endereco) {
         matricula = contadorMatricula++;
-        this.admissao = admissao;
+        this.admissao = LocalDate.now();
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = cargo;
@@ -27,33 +28,51 @@ public class Funcionario {
         this.salario = salario;
         this.departamento = departamento;
         this.telefone = telefone;
+        this.endereco = endereco;
     }
 
-    public String getMatricula() {
-        return String.format("%05d", matricula);
+    public int getMatricula() {
+        int formattedMat = Integer.parseInt(String.format("%05d", matricula));
+        return formattedMat;
     }
 
-    @Override
-    public String toString() {
+    public Funcionario() {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String admissaoFormatada = admissao.format(formatter);
+    }
 
-        String cpfFormatado = cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
+    public LocalDate getAdmissao() {
+        return admissao;
+    }
 
-        String nascimentoFormatado = dataNascimento.replaceAll("(\\d{2})(\\d{2})(\\d{4})", "$1/$2/$3");
+    public String getNome() {
+        return nome;
+    }
 
-        DecimalFormat df = new DecimalFormat("#,##0.00");
-        String salarioFormatado = "R$" + df.format(salario);
+    public String getDepartamento() {
+        return departamento;
+    }
 
-        return "Matricula: " + getMatricula() + "; \n" +
-                "Admissao: " + admissaoFormatada + "; \n" +
-                "Nome: " + nome + "; \n" +
-                "Departamento: " + departamento + "; \n" +
-                "Cargo: " + cargo + "; \n" +
-                "Telefone: " + telefone + "; \n" +
-                "CPF: " + cpfFormatado + "; \n" +
-                "Data de Nascimento: " + nascimentoFormatado + "; \n" +
-                "Salário: " + salarioFormatado;
+    public String getCargo() {
+        return cargo;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public String getEndereco() {
+        return endereco;
     }
 }
