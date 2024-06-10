@@ -1,8 +1,11 @@
 package view;
 
 import DAO.CadastroFuncionarioDAO;
-import main.java.empresa.departamento_pessoal.Cadastro;
+import DAO.CargoDAO;
+import main.java.empresa.departamento_pessoal.Cargos;
 import main.java.empresa.departamento_pessoal.Funcionario;
+import model.CargoModel;
+import model.FuncionarioModel;
 
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
@@ -10,22 +13,25 @@ import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.time.LocalDate;
+import java.util.List;
 
 public class JCadastrarFuncionario extends JFrame {
     private JPanel CadastarPanel;
     private JButton btnVoltar;
-    private JTextField admissaoField;
+    private JFormattedTextField admissaoField;
     private JFormattedTextField telefoneField;
-    private JTextField nascimentoField;
+    private JFormattedTextField nascimentoField;
     private JTextField nomeField;
-    private JTextField departamentoField;
-    private JTextField matriculaField;
+
+    private JFormattedTextField matriculaField;
     private JFormattedTextField cpfField;
     private JTextField cargoField;
-    private JTextField salarioField;
+    private JFormattedTextField salarioField;
     private JTextField enderecoField;
     private JButton btnCadastrar;
+    private JComboBox<String> comboBox;
+    private JTextField departamentoField;
+    private JTextField cboField;
 
     private int matricula;
     private String nome;
@@ -33,9 +39,10 @@ public class JCadastrarFuncionario extends JFrame {
     private String departamento;
     private String cargo;
     private String nascimento;
-    private double salario;
+    private String salario;
     private String telefone;
     private String endereco;
+    private String admissao;
 
 
     public JCadastrarFuncionario() {
@@ -46,51 +53,80 @@ public class JCadastrarFuncionario extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
+        preencherComboBox(comboBox);
+
+        comboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cargoSelecionado = (String) comboBox.getSelectedItem();
+                if (cargoSelecionado != null) {
+                   atualizarCamposCargo(cargoSelecionado);
+                }
+            }
+        });
+
+
         MaskFormatter mascararTelefone = null;
         MaskFormatter mascararCPF = null;
+        MaskFormatter mascararData = null;
+        MaskFormatter mascararMatricula = null;
+        MaskFormatter mascararSalario = null;
+
         try {
             mascararTelefone = new MaskFormatter("(##)#####-####");
             mascararTelefone.setPlaceholderCharacter('_');
-        } catch (ParseException et) {
-            et.printStackTrace();
+        } catch (ParseException eTel) {
+            eTel.printStackTrace();
+        }
+        try {
+            mascararCPF = new MaskFormatter("###.###.###-##");
+            mascararCPF.setPlaceholderCharacter('_');
+        } catch (ParseException eCpf) {
+            eCpf.printStackTrace();
+        }
+        try {
+            mascararData = new MaskFormatter("##/##/####");
+            mascararData.setPlaceholderCharacter('_');
+        } catch (ParseException eDate) {
+            eDate.printStackTrace();
+        }
+        try {
+            mascararSalario = new MaskFormatter("R$ #.###,##");
+            mascararSalario.setPlaceholderCharacter('0');
+        } catch (ParseException eSal) {
+            eSal.printStackTrace();
+        }
+
+        try {
+            mascararMatricula = new MaskFormatter("#####");
+            mascararMatricula.setPlaceholderCharacter('0');
+        } catch (ParseException eMat) {
+            eMat.printStackTrace();
         }
 
         telefoneField.setFormatterFactory(new DefaultFormatterFactory(mascararTelefone));
         cpfField.setFormatterFactory(new DefaultFormatterFactory(mascararCPF));
-
-
-        try {
-            mascararCPF = new MaskFormatter("###.###.###-##");
-            mascararCPF.setPlaceholderCharacter('_');
-        } catch (ParseException ecpf) {
-            ecpf.printStackTrace();
-        }
-        admissaoField.setText(LocalDate.now().toString());
-        matriculaField.setText("500");
-        nomeField.setText("Teste");
-        cpfField.setText("02970248174");
-        departamentoField.setText("Operacional");
-        cargoField.setText("Porteiro");
-        nascimentoField.setText("24-06-09");
-        salarioField.setText("5000");
-        telefoneField.setText("61998354398");
-        enderecoField.setText("Sol Nascente");
+        nascimentoField.setFormatterFactory(new DefaultFormatterFactory(mascararData));
+        admissaoField.setFormatterFactory(new DefaultFormatterFactory(mascararData));
+        salarioField.setFormatterFactory(new DefaultFormatterFactory(mascararSalario));
+        matriculaField.setFormatterFactory(new DefaultFormatterFactory(mascararMatricula));
 
 
         btnCadastrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
+                admissao = admissaoField.getText();
                 String matriculaText = matriculaField.getText();
                 nome = nomeField.getText();
                 cpf = cpfField.getText();
                 departamento = departamentoField.getText();
-                cargo = cargoField.getText();
+                cargo = (String) comboBox.getSelectedItem(); //pegando o valor selecionado
                 nascimento = nascimentoField.getText();
-                String salarioText = salarioField.getText();
+                salario = salarioField.getText();
                 telefone = telefoneField.getText();
                 endereco = enderecoField.getText();
+
 
                 try {
                     matricula = Integer.parseInt(matriculaText);
@@ -104,15 +140,16 @@ public class JCadastrarFuncionario extends JFrame {
                 }
 
                 //cadastrando novo funcionário
-                Cadastro novo = Cadastro.getInstance();
-                novo.adicionarFuncionario(nome, cpf, departamento, cargo, nascimento, salario, telefone, endereco);
-                Funcionario ultimoRegistro = novo.listaFuncionario().iterator().next();
+                Funcionario novo = Funcionario.getInstance();
+                novo.adicionarFuncionario(admissao, matricula, nome, cpf, departamento, cargo, nascimento, salario, telefone, endereco);
+                FuncionarioModel ultimoRegistro = novo.listaFuncionario().iterator().next();
                 new CadastroFuncionarioDAO().cadastrarFuncionario(ultimoRegistro);
 
                 SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(
                         CadastarPanel,
                         "Registro Cadastrado com sucesso!",
                         "Sucesso", JOptionPane.INFORMATION_MESSAGE));
+                dispose();
 
             }
         });
@@ -124,6 +161,24 @@ public class JCadastrarFuncionario extends JFrame {
             }
         });
 
+    }
+
+    private static void preencherComboBox(JComboBox<String> comboBox) {
+        CargoDAO dao = new CargoDAO();
+        List<String> cargos = dao.buscarCargos(); // Busque todos os cargos
+        for (String cargo : cargos) {
+            comboBox.addItem(cargo);
+        }
+    }
+
+    private void atualizarCamposCargo(String cargoSelecionado) {
+        CargoDAO dao = new CargoDAO();
+        CargoModel cargo = dao.selecionarCargo(cargoSelecionado);
+        if (cargo != null) {
+            cboField.setText(cargo.getCbo());
+            departamentoField.setText(cargo.getDepartamento());
+            salarioField.setText(cargo.getSalario());
+        }
     }
 
     public static void main(String[] args) {

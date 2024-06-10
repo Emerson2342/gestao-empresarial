@@ -1,7 +1,7 @@
 package DAO;
 
 import conexao.Conexao;
-import main.java.empresa.portaria.Visitante;
+import model.VisitanteModel;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -10,8 +10,8 @@ import java.util.List;
 
 public class PortariaDAO {
 
-    public int resgistrarEntrada(Visitante visitante) {
-        String sql = "INSERT INTO REGISTRO (MATRICULA, NOME, CPF, TELEFONE, ENTRADA, SAIDA) VALUES (?,?,?,?,?,?)";
+    public int resgistrarEntrada(VisitanteModel visitante) {
+        String sql = "INSERT INTO CONTROLEPORTARIA.REGISTRO (MATRICULA, NOME, CPF, TELEFONE, ENTRADA, SAIDA) VALUES (?,?,?,?,?,?)";
         int generatedId = -1;
 
         try (Connection conn = Conexao.getConexao();
@@ -54,10 +54,10 @@ public class PortariaDAO {
         return sucesso;
     }
 
-    public Visitante selecionarVisitante(int matricula) {
+    public VisitanteModel selecionarVisitante(int matricula) {
         String sql = "SELECT * FROM controleportaria.registro WHERE matricula = ? ORDER BY entrada DESC LIMIT 1";
 
-        Visitante visitanteSelecionado = null;
+        VisitanteModel visitanteSelecionado = null;
 
         try (Connection conn = Conexao.getConexao();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -71,7 +71,7 @@ public class PortariaDAO {
                     String telefone = rs.getString("TELEFONE");
                     LocalDateTime entrada = rs.getTimestamp("ENTRADA").toLocalDateTime();
                     LocalDateTime saida = rs.getTimestamp("SAIDA") != null ? rs.getTimestamp("SAIDA").toLocalDateTime() : null;
-                    visitanteSelecionado = new Visitante(matricula, nome, cpf, telefone, entrada, saida);
+                    visitanteSelecionado = new VisitanteModel(matricula, nome, cpf, telefone, entrada, saida);
                 }
             }
 
@@ -82,9 +82,9 @@ public class PortariaDAO {
     }
 
 
-    public List<Visitante> listarVisitantes() {
+    public List<VisitanteModel> listarVisitantes() {
         String sql = "SELECT * FROM REGISTRO";
-        List<Visitante> visitantes = new ArrayList<>();
+        List<VisitanteModel> visitantes = new ArrayList<>();
 
         try (Connection conn = Conexao.getConexao();
              PreparedStatement ps = conn.prepareStatement(sql);
@@ -98,7 +98,7 @@ public class PortariaDAO {
                 LocalDateTime entrada = rs.getTimestamp("ENTRADA").toLocalDateTime();
                 LocalDateTime saida = rs.getTimestamp("SAIDA") != null ? rs.getTimestamp("SAIDA").toLocalDateTime() : null;
 
-                Visitante visitante = new Visitante(matricula, nome, cpf, telefone, entrada);
+                VisitanteModel visitante = new VisitanteModel(matricula, nome, cpf, telefone, entrada);
                 visitante.setSaida(saida);
                 visitantes.add(visitante);
             }

@@ -1,9 +1,9 @@
 package view;
 
 import DAO.PortariaDAO;
-import main.java.empresa.portaria.Visitante;
+import model.VisitanteModel;
 import model.LinhaListradas;
-import model.ModeloTabela;
+import model.TabelaModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -29,12 +29,12 @@ public class JRegistroPortaria extends JFrame {
         setContentPane(RegistroPortaria);
 
         //cria a lista vindo do banco de dados
-        List<Visitante> visitantes = new PortariaDAO().listarVisitantes();
+        List<VisitanteModel> visitantes = new PortariaDAO().listarVisitantes();
         //instancia o model da tabela
-        ModeloTabela modeloTabela = new ModeloTabela(visitantes);
+        TabelaModel tabelaModel = new TabelaModel(visitantes);
 
         //cria a tabela com o modelo
-        table = new JTable(modeloTabela);
+        table = new JTable(tabelaModel);
         //edita as linhas da tabela
         table.setDefaultRenderer(Object.class, new LinhaListradas());
         //adiciona a tabela no JScrollPane
@@ -46,7 +46,7 @@ public class JRegistroPortaria extends JFrame {
         RegistroPortaria.setBorder(new EmptyBorder(25, 15, 55, 15));
 
         setVisible(true);
-        table.setModel(modeloTabela);
+        table.setModel(tabelaModel);
 
 
 

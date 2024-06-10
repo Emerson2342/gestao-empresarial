@@ -1,11 +1,8 @@
-package main.java.empresa.portaria;
-
-import main.java.empresa.departamento_pessoal.ControleDePonto;
+package model;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-public class Visitante {
+public class VisitanteModel {
     private int matricula;
     private String nome;
     private String cpf;
@@ -14,7 +11,7 @@ public class Visitante {
     private LocalDateTime saida;
 
     //construtor entrada de visitantes
-    public Visitante(int matricula, String nome, String cpf, String telefone, LocalDateTime entrada) {
+    public VisitanteModel(int matricula, String nome, String cpf, String telefone, LocalDateTime entrada) {
         this.matricula = matricula;
         this.nome = nome;
         this.cpf = cpf;
@@ -22,7 +19,7 @@ public class Visitante {
         this.entrada = entrada;
     }
     //construtor saída de visitantes
-    public Visitante(int matricula, String nome, String cpf, String telefone, LocalDateTime entrada, LocalDateTime saida) {
+    public VisitanteModel(int matricula, String nome, String cpf, String telefone, LocalDateTime entrada, LocalDateTime saida) {
         this.matricula = matricula;
         this.nome = nome;
         this.cpf = cpf;
@@ -31,7 +28,7 @@ public class Visitante {
         this.saida = saida;
     }
 
-    public Visitante() {
+    public VisitanteModel() {
     }
 
     public int getMatricula() {
@@ -82,14 +79,4 @@ public class Visitante {
         this.saida = saida;
     }
 
-    @Override
-    public String toString() {
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String entradaFormatada = entrada.format(formato);
-        String cpfFormatado = cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
-        return "Matricula: " + matricula + "; \n" +
-                "Nome: " + nome + "; \n" +
-                "CPF: " + cpfFormatado + "; \n" +
-                "Entrada: " + entradaFormatada;
-    }
-}
+ }

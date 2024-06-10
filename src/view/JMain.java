@@ -27,7 +27,7 @@ public class JMain extends JFrame {
                 // JOptionPane.showMessageDialog(JMain.this, "Portaria");
                 dispose();
 
-                JPortaria jportaria = new JPortaria();
+                JPortariaCadastro jportaria = new JPortariaCadastro();
                 jportaria.setLocationRelativeTo(jportaria);
             }
         });

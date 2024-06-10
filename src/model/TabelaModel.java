@@ -1,20 +1,18 @@
 package model;
 
-import main.java.empresa.portaria.Visitante;
-
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-public class ModeloTabela extends AbstractTableModel {
+public class TabelaModel extends AbstractTableModel {
     private static final String[] colunas = {
             "ID", "Matricula", "Nome", "CPF","TELEFONE", "Entrada", "Saida"
     };
 
-    private List<Visitante> visitantes;
+    private List<VisitanteModel> visitantes;
 
 
-    public ModeloTabela(List<Visitante> visitantes) {
+    public TabelaModel(List<VisitanteModel> visitantes) {
         this.visitantes = visitantes;
     }
 
@@ -30,7 +28,7 @@ public class ModeloTabela extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Visitante visitante = visitantes.get(rowIndex);
+        VisitanteModel visitante = visitantes.get(rowIndex);
 
         switch (columnIndex) {
             case 0:

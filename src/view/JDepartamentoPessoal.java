@@ -9,7 +9,8 @@ public class JDepartamentoPessoal extends JFrame {
     private JPanel DPPanel;
     private JButton btnVoltar;
     private JButton btnFechar;
-    private JButton btnCadastrar;
+    private JButton btnCadastrarFuncionario;
+    private JButton btnCadastrarCargo;
 
     public JDepartamentoPessoal() {
         setContentPane(DPPanel);
@@ -34,7 +35,7 @@ public class JDepartamentoPessoal extends JFrame {
                 dispose();
             }
         });
-        btnCadastrar.addActionListener(new ActionListener() {
+        btnCadastrarFuncionario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JCadastrarFuncionario jCadastrarFuncionario = new JCadastrarFuncionario();

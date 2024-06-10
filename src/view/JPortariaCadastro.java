@@ -2,7 +2,7 @@ package view;
 
 import DAO.PortariaDAO;
 import main.java.empresa.portaria.Portaria;
-import main.java.empresa.portaria.Visitante;
+import model.VisitanteModel;
 
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.time.LocalDateTime;
 
-public class JPortaria extends JFrame {
+public class JPortariaCadastro extends JFrame {
 
     private JPanel PortariaPanel;
     private JTextField matriculaField;
@@ -36,7 +36,7 @@ public class JPortaria extends JFrame {
     private String cpf;
     private String telefone;
 
-    public JPortaria() {
+    public JPortariaCadastro() {
         setContentPane(PortariaPanel);
         setTitle("Portaria");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -90,7 +90,7 @@ public class JPortaria extends JFrame {
                 // Cadastrando novo visitante
                 Portaria novo = Portaria.getInssstance();
                 novo.adicionarVisitante(matricula, nome, cpf, telefone, LocalDateTime.now());
-                Visitante ultimoRegistro = novo.listaVisitante().iterator().next();
+                VisitanteModel ultimoRegistro = novo.listaVisitante().iterator().next();
                 new PortariaDAO().resgistrarEntrada(ultimoRegistro);
 
                 // Limpando os campos
@@ -100,7 +100,7 @@ public class JPortaria extends JFrame {
                 telefoneField.setText("");
 
                 SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(
-                        JPortaria.this,
+                        JPortariaCadastro.this,
                         "Registro Cadastrado com sucesso!"));
             }
 
@@ -211,7 +211,7 @@ public class JPortaria extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     int matriculaSaida = Integer.parseInt(fieldMatriculaSaida.getText());
-                    Visitante selecionado = new PortariaDAO().selecionarVisitante(matriculaSaida);
+                    VisitanteModel selecionado = new PortariaDAO().selecionarVisitante(matriculaSaida);
 
                     if (selecionado != null) {
                         if (selecionado.getSaida() != null) {
@@ -251,6 +251,6 @@ public class JPortaria extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        SwingUtilities.invokeLater(() -> new JPortaria());
+        SwingUtilities.invokeLater(() -> new JPortariaCadastro());
     }
 }

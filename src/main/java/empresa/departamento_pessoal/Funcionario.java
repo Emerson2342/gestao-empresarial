@@ -1,78 +1,36 @@
 package main.java.empresa.departamento_pessoal;
 
-import java.text.DecimalFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import model.FuncionarioModel;
 
-public class Funcionario {
-    private static int contadorMatricula = 1;
-    private int matricula = 500;
-    private LocalDate admissao;
-    private String nome;
-    private String departamento;
-    private String cargo;
-    private String telefone;
-    private String cpf;
-    private String dataNascimento;
-    private double salario;
-    private String endereco;
+import java.util.ArrayList;
+import java.util.List;
 
-    //construtor add novo funcionário
-    public Funcionario(String nome, String cpf, String departamento, String cargo, String dataNascimento, double salario, String telefone, String endereco) {
-        matricula = contadorMatricula++;
-        this.admissao = LocalDate.now();
-        this.nome = nome;
-        this.cpf = cpf;
-        this.cargo = cargo;
-        this.dataNascimento = dataNascimento;
-        this.salario = salario;
-        this.departamento = departamento;
-        this.telefone = telefone;
-        this.endereco = endereco;
-    }
-
-    public int getMatricula() {
-        int formattedMat = Integer.parseInt(String.format("%05d", matricula));
-        return formattedMat;
-    }
+public class Funcionario extends FuncionarioModel {
+    private static Funcionario instance;
+    //atributo da Classse
+    private List<FuncionarioModel> funcionarioList;
 
     public Funcionario() {
-
+        this.funcionarioList = new ArrayList<>();
     }
 
-    public LocalDate getAdmissao() {
-        return admissao;
+    public static Funcionario getInstance() {
+        if (instance == null) {
+            instance = new Funcionario();
+        }
+        return instance;
     }
 
-    public String getNome() {
-        return nome;
+    public void adicionarFuncionario( String admissao,int matricula, String nome, String cpf, String departamento, String cargo, String dataNascimento, String salario, String telefone, String endereco) {
+        funcionarioList.add(new FuncionarioModel( admissao,matricula,nome, cpf, departamento, cargo, dataNascimento, salario, telefone, endereco));
     }
 
-    public String getDepartamento() {
-        return departamento;
+    public List<FuncionarioModel> listaFuncionario() {
+        for (FuncionarioModel f : funcionarioList) {
+            System.out.println(f);
+            System.out.println("**************************");
+        }
+        return funcionarioList;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
 }
