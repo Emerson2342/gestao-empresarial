@@ -1,9 +1,9 @@
 package view;
 
-import DAO.PortariaDAO;
-import model.VisitanteModel;
+import DAO.FuncionarioDAO;
+import model.FuncionarioModel;
 import model.LinhaListradas;
-import model.TabelaModel;
+import model.TabelaFuncionariosModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,42 +12,37 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class JRegistroPortaria extends JFrame {
-    private JPanel RegistroPortaria;
+public class JListaFuncionarios extends JFrame {
+    private JPanel ListaFuncionariosPanel;
     private JTable table;
     private JButton btnFechar;
 
-    public JRegistroPortaria() {
-        setTitle("Registro de Portaria");
+    public JListaFuncionarios() {
+        setTitle("Lista de Funcionários");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(900, 700);
+        setSize(1300, 700);
         setLocationRelativeTo(null);
 
+        ListaFuncionariosPanel = new JPanel(new BorderLayout());
+        setContentPane(ListaFuncionariosPanel);
 
 
-        RegistroPortaria = new JPanel(new BorderLayout());
-        setContentPane(RegistroPortaria);
+        List<FuncionarioModel> funcionarios = new FuncionarioDAO().listarFuncionarios();
 
-        //cria a lista vindo do banco de dados
-        List<VisitanteModel> visitantes = new PortariaDAO().listarVisitantes();
-        //instancia o model da tabela
-        TabelaModel tabelaModel = new TabelaModel(visitantes);
+        TabelaFuncionariosModel tabelaFuncionariosModel = new TabelaFuncionariosModel(funcionarios);
 
-        //cria a tabela com o modelo
-        table = new JTable(tabelaModel);
-        //edita as linhas da tabela
+        table = new JTable(tabelaFuncionariosModel);
+
         table.setDefaultRenderer(Object.class, new LinhaListradas());
-        //adiciona a tabela no JScrollPane
+
         JScrollPane scrollPane = new JScrollPane(table);
 
-        //adicionar o JScrollPane ao RegistroPortaria
-        RegistroPortaria.add(scrollPane);
+        ListaFuncionariosPanel.add(scrollPane);
 
-        RegistroPortaria.setBorder(new EmptyBorder(25, 15, 55, 15));
+        ListaFuncionariosPanel.setBorder(new EmptyBorder(25, 15, 55, 15));
 
         setVisible(true);
-        table.setModel(tabelaModel);
-
+        table.setModel(tabelaFuncionariosModel);
 
 
         btnFechar.addActionListener(new ActionListener() {
@@ -56,8 +51,9 @@ public class JRegistroPortaria extends JFrame {
                 dispose();
             }
         });
-        RegistroPortaria.add(btnFechar, BorderLayout.PAGE_END);
-      btnFechar.setPreferredSize(new Dimension(0, 50));
+        ListaFuncionariosPanel.add(btnFechar, BorderLayout.PAGE_END);
+        btnFechar.setPreferredSize(new Dimension(0,50));
+
     }
 
     public static void main(String[] args) {
@@ -71,8 +67,7 @@ public class JRegistroPortaria extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        SwingUtilities.invokeLater(() -> new JRegistroPortaria());
+        SwingUtilities.invokeLater(() -> new JListaFuncionarios());
     }
-
 
 }

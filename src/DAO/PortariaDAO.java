@@ -83,7 +83,7 @@ public class PortariaDAO {
 
 
     public List<VisitanteModel> listarVisitantes() {
-        String sql = "SELECT * FROM REGISTRO";
+        String sql = "SELECT * FROM CONTROLEPORTARIA.REGISTRO";
         List<VisitanteModel> visitantes = new ArrayList<>();
 
         try (Connection conn = Conexao.getConexao();
@@ -98,8 +98,8 @@ public class PortariaDAO {
                 LocalDateTime entrada = rs.getTimestamp("ENTRADA").toLocalDateTime();
                 LocalDateTime saida = rs.getTimestamp("SAIDA") != null ? rs.getTimestamp("SAIDA").toLocalDateTime() : null;
 
-                VisitanteModel visitante = new VisitanteModel(matricula, nome, cpf, telefone, entrada);
-                visitante.setSaida(saida);
+                VisitanteModel visitante = new VisitanteModel(matricula, nome, cpf, telefone, entrada, saida);
+                //visitante.setSaida(saida);
                 visitantes.add(visitante);
             }
 

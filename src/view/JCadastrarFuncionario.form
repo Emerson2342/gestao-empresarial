@@ -26,6 +26,7 @@
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Voltar"/>
         </properties>
       </component>
@@ -67,7 +68,9 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+        </properties>
       </component>
       <component id="b917a" class="javax.swing.JTextField" binding="enderecoField">
         <constraints>
@@ -78,6 +81,7 @@
           </grid>
         </constraints>
         <properties>
+          <font name="Segoe UI Variable" size="16"/>
           <text value=""/>
         </properties>
       </component>
@@ -130,6 +134,7 @@
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Cadastrar"/>
         </properties>
       </component>
@@ -141,7 +146,10 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
+        </properties>
       </component>
       <component id="4b426" class="javax.swing.JFormattedTextField" binding="telefoneField">
         <constraints>
@@ -151,7 +159,10 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
+        </properties>
       </component>
       <component id="881be" class="javax.swing.JFormattedTextField" binding="admissaoField">
         <constraints>
@@ -161,7 +172,10 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
+        </properties>
       </component>
       <component id="1e724" class="javax.swing.JFormattedTextField" binding="nascimentoField">
         <constraints>
@@ -171,7 +185,10 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
+        </properties>
       </component>
       <component id="125d2" class="javax.swing.JFormattedTextField" binding="matriculaField">
         <constraints>
@@ -181,7 +198,10 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
+        </properties>
       </component>
       <component id="228c1" class="javax.swing.JLabel">
         <constraints>
@@ -201,7 +221,9 @@
             <maximum-size width="170" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Segoe UI Variable" size="16"/>
+        </properties>
       </component>
       <component id="d3f82" class="javax.swing.JLabel">
         <constraints>
@@ -215,7 +237,7 @@
       </component>
       <component id="30fdb" class="javax.swing.JTextField" binding="departamentoField">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="170" height="30"/>
             <preferred-size width="170" height="30"/>
             <maximum-size width="170" height="30"/>
@@ -224,6 +246,8 @@
         <properties>
           <editable value="false"/>
           <enabled value="false"/>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
           <text value=""/>
         </properties>
       </component>
@@ -249,7 +273,7 @@
       </component>
       <component id="98c55" class="javax.swing.JTextField" binding="cboField">
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="170" height="30"/>
             <preferred-size width="170" height="30"/>
             <maximum-size width="170" height="30"/>
@@ -258,6 +282,8 @@
         <properties>
           <editable value="false"/>
           <enabled value="false"/>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
           <text value=""/>
         </properties>
       </component>
@@ -272,6 +298,8 @@
         <properties>
           <editable value="false"/>
           <enabled value="false"/>
+          <font name="Segoe UI Variable" size="16"/>
+          <horizontalAlignment value="0"/>
         </properties>
       </component>
     </children>

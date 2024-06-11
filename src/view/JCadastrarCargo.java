@@ -1,6 +1,5 @@
 package view;
 
-import DAO.CadastroFuncionarioDAO;
 import DAO.CargoDAO;
 import main.java.empresa.departamento_pessoal.Cargos;
 import model.CargoModel;

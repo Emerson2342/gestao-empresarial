@@ -6,6 +6,7 @@ import model.CargoModel;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CargoDAO {
 
@@ -79,6 +80,32 @@ public class CargoDAO {
             e.printStackTrace();
         }
         return cargos;
+    }
+
+    public List<CargoModel> listarCargos() {
+        String sql = "SELECT * FROM departamentopessoal.cargos;";
+        List<CargoModel> cargos = new ArrayList<>();
+
+        try (
+                Connection conn = Conexao.getConexao();
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                String cbo = rs.getString("CBO");
+                String cargoo = rs.getString("CARGO");
+                String departamento = rs.getString("DEPARTAMENTO");
+                String salario = rs.getString("SALARIO");
+
+                CargoModel cargo = new CargoModel(cbo, departamento, cargoo, salario);
+                cargos.add(cargo);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return cargos;
+
     }
 
 

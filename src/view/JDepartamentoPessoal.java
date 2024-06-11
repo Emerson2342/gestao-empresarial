@@ -11,6 +11,8 @@ public class JDepartamentoPessoal extends JFrame {
     private JButton btnFechar;
     private JButton btnCadastrarFuncionario;
     private JButton btnCadastrarCargo;
+    private JButton btnListarFuncionarios;
+    private JButton btnListarCargos;
 
     public JDepartamentoPessoal() {
         setContentPane(DPPanel);
@@ -48,6 +50,21 @@ public class JDepartamentoPessoal extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JCadastrarCargo jCadastrarCargo = new JCadastrarCargo();
                 jCadastrarCargo.setLocationRelativeTo(jCadastrarCargo);
+            }
+        });
+        btnListarFuncionarios.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JListaFuncionarios jListaFuncionarios = new JListaFuncionarios();
+                jListaFuncionarios.setLocationRelativeTo(jListaFuncionarios);
+            }
+        });
+
+        btnListarCargos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JListaCargos jListaCargos = new JListaCargos();
+                jListaCargos.setLocationRelativeTo(jListaCargos);
             }
         });
     }

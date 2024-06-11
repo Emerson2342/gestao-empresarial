@@ -1,8 +1,7 @@
 package view;
 
-import DAO.CadastroFuncionarioDAO;
+import DAO.FuncionarioDAO;
 import DAO.CargoDAO;
-import main.java.empresa.departamento_pessoal.Cargos;
 import main.java.empresa.departamento_pessoal.Funcionario;
 import model.CargoModel;
 import model.FuncionarioModel;
@@ -156,7 +155,7 @@ public class JCadastrarFuncionario extends JFrame {
                 Funcionario novo = Funcionario.getInstance();
                 novo.adicionarFuncionario(admissao, matricula, nome, cpf, departamento, cargo, nascimento, salario, telefone, endereco);
                 FuncionarioModel ultimoRegistro = novo.listaFuncionario().iterator().next();
-                new CadastroFuncionarioDAO().cadastrarFuncionario(ultimoRegistro);
+                new FuncionarioDAO().cadastrarFuncionario(ultimoRegistro);
 
                 System.out.println(cargo);
 
@@ -188,6 +187,7 @@ public class JCadastrarFuncionario extends JFrame {
                     JOptionPane.showMessageDialog(
                             CadastarPanel, "Favor preencer o campo NOME",
                             "Erro", JOptionPane.ERROR_MESSAGE);
+                    nomeField.requestFocus();
                     nomeField.requestFocus();
                     return false;
                 }
