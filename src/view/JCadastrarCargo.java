@@ -80,8 +80,7 @@ public class JCadastrarCargo extends JFrame {
                 cargoField.setText("");
                 departamentoField.setText("");
                 salarioField.setText("");
-
-
+                dispose();
             }
 
             private boolean validarCampos(String cbo, String cargo, String departamento, String salario){
@@ -123,6 +122,12 @@ public class JCadastrarCargo extends JFrame {
             }
         });
 
+        btnVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {

@@ -43,6 +43,13 @@ public class JDepartamentoPessoal extends JFrame {
 
             }
         });
+        btnCadastrarCargo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCadastrarCargo jCadastrarCargo = new JCadastrarCargo();
+                jCadastrarCargo.setLocationRelativeTo(jCadastrarCargo);
+            }
+        });
     }
 
     public static void main(String[] args) {

@@ -5,30 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DAO/CargoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cargos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/CargoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/FuncionarioModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/JCadastrarCargo.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/JCadastrarCargo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/CadastroFuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CadastroFuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PortariaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cadastro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Cargo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/departamento_pessoal/ListaCargo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/portaria/Portaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/empresa/portaria/Portaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/empresa/portaria/Visitante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/VisitanteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ModeloTabela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TabelaModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/JCadastrarCargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarCargo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JDepartamentoPessoal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JDepartamentoPessoal.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/JDepartamentoPessoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JDepartamentoPessoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JPortaria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JPortariaCadastro.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JPortaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JPortariaCadastro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JRegistroPortaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JRegistroPortaria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +55,10 @@
     "Application.ControleDePonto.executor": "Run",
     "Application.JCadastrarCargo (1).executor": "Run",
     "Application.JCadastrarCargo.executor": "Run",
+    "Application.JCadastrarFuncionario (1).executor": "Run",
     "Application.JCadastrarFuncionario.executor": "Run",
     "Application.JDepartamentoPessoal.executor": "Run",
+    "Application.JMain (1).executor": "Run",
     "Application.JMain.executor": "Run",
     "Application.JPortaria.executor": "Run",
     "Application.JRegistroPortaria.executor": "Run",
@@ -103,22 +85,9 @@
       <recent name="F:\Meus Documentos\IntelliJ\Java\Empresa\src\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JCadastrarFuncionario">
-    <configuration name="JCadastrarCargo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.JCadastrarCargo" />
-      <module name="Gestão Empresarial" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JCadastrarCargo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.JCadastrarCargo" />
+  <component name="RunManager" selected="Application.JMain (1)">
+    <configuration name="JCadastrarFuncionario (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.JCadastrarFuncionario" />
       <module name="Gestão Empresarial" />
       <extension name="coverage">
         <pattern>
@@ -156,8 +125,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JPortariaCadastro" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.JPortariaCadastro" />
+    <configuration name="JMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.JMain" />
+      <module name="Gestão Empresarial" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.JMain" />
       <module name="Gestão Empresarial" />
       <extension name="coverage">
         <pattern>
@@ -170,19 +152,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.JCadastrarCargo" />
-      <item itemvalue="Application.JCadastrarCargo (1)" />
-      <item itemvalue="Application.JCadastrarFuncionario" />
+      <item itemvalue="Application.JCadastrarFuncionario (1)" />
       <item itemvalue="Application.JDepartamentoPessoal" />
-      <item itemvalue="Application.JPortariaCadastro" />
+      <item itemvalue="Application.JMain (1)" />
+      <item itemvalue="Application.JMain" />
+      <item itemvalue="Application.JCadastrarFuncionario" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JCadastrarFuncionario" />
-        <item itemvalue="Application.JCadastrarCargo (1)" />
-        <item itemvalue="Application.JCadastrarCargo" />
-        <item itemvalue="Application.JPortariaCadastro" />
+        <item itemvalue="Application.JMain (1)" />
+        <item itemvalue="Application.JCadastrarFuncionario (1)" />
         <item itemvalue="Application.JDepartamentoPessoal" />
+        <item itemvalue="Application.JMain" />
+        <item itemvalue="Application.JCadastrarFuncionario" />
       </list>
     </recent_temporary>
   </component>

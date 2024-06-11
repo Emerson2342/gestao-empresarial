@@ -60,7 +60,7 @@ public class JCadastrarFuncionario extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String cargoSelecionado = (String) comboBox.getSelectedItem();
                 if (cargoSelecionado != null) {
-                   atualizarCamposCargo(cargoSelecionado);
+                    atualizarCamposCargo(cargoSelecionado);
                 }
             }
         });
@@ -127,6 +127,15 @@ public class JCadastrarFuncionario extends JFrame {
                 telefone = telefoneField.getText();
                 endereco = enderecoField.getText();
 
+//                System.out.println("admissão: " + admissao);
+//                System.out.println("matricula: " + matriculaText);
+//                System.out.println("nome: " + nome);
+//                System.out.println("cpf: " + cpf);
+//                System.out.println("cargo: " + cargo);
+//                System.out.println("nascimento: " + nascimento);
+//                System.out.println("telefone: " + telefone);
+//                System.out.println("endereço: " + endereco);
+
 
                 try {
                     matricula = Integer.parseInt(matriculaText);
@@ -139,18 +148,86 @@ public class JCadastrarFuncionario extends JFrame {
                     return;
                 }
 
+                if (!validarCampos(admissao, matricula, nome, cpf, cargo, nascimento, endereco)) {
+                    return;
+                }
+
                 //cadastrando novo funcionário
                 Funcionario novo = Funcionario.getInstance();
                 novo.adicionarFuncionario(admissao, matricula, nome, cpf, departamento, cargo, nascimento, salario, telefone, endereco);
                 FuncionarioModel ultimoRegistro = novo.listaFuncionario().iterator().next();
                 new CadastroFuncionarioDAO().cadastrarFuncionario(ultimoRegistro);
 
+                System.out.println(cargo);
+
+
                 SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(
                         CadastarPanel,
                         "Registro Cadastrado com sucesso!",
                         "Sucesso", JOptionPane.INFORMATION_MESSAGE));
                 dispose();
+            }
 
+            private boolean validarCampos(String admissao, int matricula, String nome, String cpf, String cargo, String nascimento, String endereco) {
+
+                if (admissao.equals("__/__/____")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo ADMISSÃO",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    admissaoField.requestFocus();
+                    return false;
+                }
+                if (matricula == 00000) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo MATRÍCULA",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    matriculaField.requestFocus();
+                    return false;
+                }
+                if (nome.equals("")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo NOME",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    nomeField.requestFocus();
+                    return false;
+                }
+                if (cpf.equals("___.___.___-__")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo CPF",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    cpfField.requestFocus();
+                    return false;
+                }
+                if (cargo.equals("Selecione o Cargo")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor selecionar um CARGO",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    return false;
+                }
+                if (nascimento.equals("__/__/____")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo NASCIMENTO",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    nascimentoField.requestFocus();
+                    return false;
+                }
+                if (telefone.equals("(__)_____-____")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo TELEFONE",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    telefoneField.requestFocus();
+                    return false;
+                }
+                if (endereco.equals("")) {
+                    JOptionPane.showMessageDialog(
+                            CadastarPanel, "Favor preencer o campo ENDEREÇO",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    enderecoField.requestFocus();
+                    return false;
+                }
+
+
+                return true;
             }
         });
 
@@ -166,6 +243,7 @@ public class JCadastrarFuncionario extends JFrame {
     private static void preencherComboBox(JComboBox<String> comboBox) {
         CargoDAO dao = new CargoDAO();
         List<String> cargos = dao.buscarCargos(); // Busque todos os cargos
+        comboBox.addItem("Selecione o Cargo");
         for (String cargo : cargos) {
             comboBox.addItem(cargo);
         }
@@ -178,6 +256,11 @@ public class JCadastrarFuncionario extends JFrame {
             cboField.setText(cargo.getCbo());
             departamentoField.setText(cargo.getDepartamento());
             salarioField.setText(cargo.getSalario());
+        } else {
+
+            cboField.setText("0000-00");
+            departamentoField.setText("");
+            salarioField.setText("R$ 0.000,00");
         }
     }
 
