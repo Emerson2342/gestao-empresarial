@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c40da3e-1b0b-4718-abbe-001b3f157800" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/CustomHeaderRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/CustomTableCellRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TabelaCargoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TabelaCargoModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TabelaFuncionariosModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TabelaFuncionariosModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TabelaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TabelaModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JCadastrarCargo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarCargo.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JCadastrarFuncionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JDepartamentoPessoal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JDepartamentoPessoal.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JListaCargos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JListaCargos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JListaFuncionarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JListaFuncionarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JMain.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JMain.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JPortariaCadastro.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JPortariaCadastro.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JRegistroPortaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JRegistroPortaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +43,16 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2fhQ6X5kScx3Kg2p1FS1VPLtBfn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.ControleDePonto.executor": "Run",
     "Application.JCadastrarCargo (1).executor": "Run",
     "Application.JCadastrarCargo.executor": "Run",
@@ -198,5 +186,8 @@
       <updated>1714250654454</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

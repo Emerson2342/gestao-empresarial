@@ -25,7 +25,7 @@ Este é um sistema empresarial desenvolvido para auxiliar na gestão de entrada 
 #### Tabela de Funcionários
 
 - **Criação de Funcionários**: Permite criar novos registros de funcionários.
-- **Associação a Cargos**: Cada funcionário pode ser associado a um cargo existente na tabela de cargos.
+- **Associação a Cargos**: Cada funcionário só pode ser associado a um cargo existente na tabela de cargos.
     - **Preenchimento Automático**: Os dados do cargo (CBO, Cargo, Departamento e Salário) são preenchidos automaticamente ao selecionar um cargo existente.
 - **Armazenamento no MySQL**: Todas as informações sobre funcionários são salvas no banco de dados MySQL.
 
@@ -34,15 +34,28 @@ Este é um sistema empresarial desenvolvido para auxiliar na gestão de entrada 
 - **Backend**: Contém toda a lógica de negócio e comunicação com o banco de dados MySQL.
 - **Frontend (Java Swing)**: Interface gráfica que permite a interação dos usuários com o sistema.
 
+*Projeto ainda em andamento*
+
 ## Screenshots
 
 Para uma melhor visualização do sistema, aqui estão alguns prints das telas principais:
 
-![Menu Portaria](caminho/para/seu/print/menu_portaria.png)
-*Descrição*: Tela de registro de entrada e saída de pessoas.
+![Principal](imagens/home.jpg)
 
-![Tabela de Cargos](caminho/para/seu/print/tabela_cargos.png)
-*Descrição*: Tela de gerenciamento de cargos.
 
-![Tabela de Funcionários](caminho/para/seu/print/tabela_funcionarios.png)
-*Descrição*: Tela de gerenciamento de funcionários com associação a cargos.
+![Portaria](imagens/portaria.jpg)
+
+
+![Registro Portaria](imagens/registroEntrada.jpg)
+
+
+![Registro Portaria](imagens/dp.jpg)
+
+
+![Cadastrar Funcionário](imagens/cadastrarFuncionario.jpg)
+
+![Cadastrar Cargos](imagens/cadastrarCargo.jpg)
+
+![Lista de Funcionários](imagens/funcionarios.jpg)
+
+![Lista de cargos](imagens/cargos.jpg)
