@@ -10,7 +10,7 @@ Este é um sistema empresarial desenvolvido para auxiliar na gestão de entrada 
 
 ## Funcionalidades
 
-### Menu Portaria
+### Portaria
 
 - **Registro de Entrada e Saída de Pessoas**: Funcionalidade que permite registrar a entrada e saída de pessoas no sistema.
 - **Armazenamento no MySQL**: Todos os registros de entrada e saída são salvos em um banco de dados MySQL.
