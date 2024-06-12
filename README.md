@@ -4,6 +4,7 @@ Este é um sistema empresarial desenvolvido para auxiliar na gestão de entrada 
 
 ## Tecnologias Utilizadas
 
+- **IntelliJ**: IDE utilizada para o desenvolvimento.
 - **Java**: Utilizado tanto no backend quanto no frontend (Java Swing).
 - **MySQL**: Banco de dados para armazenamento das informações.
 
