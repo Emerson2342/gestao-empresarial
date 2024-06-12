@@ -41,22 +41,15 @@ Este é um sistema empresarial desenvolvido para auxiliar na gestão de entrada 
 
 Para uma melhor visualização do sistema, aqui estão alguns prints das telas principais:
 
-![Principal](imagens/home.jpg)
+![Principal](imagens/home.jpg) | ![Portaria](imagens/portaria.jpg)
+|:---:|:---:|
 
+![Registro Portaria](imagens/registroEntrada.jpg) | ![Departamento Pessoal](imagens/dp.jpg)
+|:---:|:---:|
 
-![Portaria](imagens/portaria.jpg)
+![Cadastrar Funcionário](imagens/cadastrarFuncionario.jpg) | ![Lista de Funcionários](imagens/funcionarios.jpg)
+|:---:|:---:|
 
+![Cadastrar Cargos](imagens/cadastrarCargo.jpg) | ![Lista de cargos](imagens/cargos.jpg)
+|:---:|:---:|
 
-![Registro Portaria](imagens/registroEntrada.jpg)
-
-
-![Registro Portaria](imagens/dp.jpg)
-
-
-![Cadastrar Funcionário](imagens/cadastrarFuncionario.jpg)
-
-![Cadastrar Cargos](imagens/cadastrarCargo.jpg)
-
-![Lista de Funcionários](imagens/funcionarios.jpg)
-
-![Lista de cargos](imagens/cargos.jpg)
