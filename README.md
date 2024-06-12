@@ -33,6 +33,7 @@ Este é um sistema empresarial desenvolvido para auxiliar na gestão de entrada 
 
 - **Backend**: Contém toda a lógica de negócio e comunicação com o banco de dados MySQL.
 - **Frontend (Java Swing)**: Interface gráfica que permite a interação dos usuários com o sistema.
+- **Validação de Dados**: Todos os campos são verificados para evitar que o usuário adicione dados inválidos durante o registro, prevenindo assim a ocorrência de exceções.
 
 *Projeto ainda em andamento*
 
