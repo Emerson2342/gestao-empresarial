@@ -48,7 +48,7 @@ public class JCadastrarFuncionario extends JFrame {
         setContentPane(CadastarPanel);
         setTitle("Cadastro de Funcionário");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(400, 500);
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setVisible(true);
 

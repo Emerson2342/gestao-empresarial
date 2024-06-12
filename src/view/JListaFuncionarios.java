@@ -1,12 +1,14 @@
 package view;
 
 import DAO.FuncionarioDAO;
+import model.CustomHeaderRenderer;
 import model.FuncionarioModel;
 import model.LinhaListradas;
 import model.TabelaFuncionariosModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,7 +35,13 @@ public class JListaFuncionarios extends JFrame {
 
         table = new JTable(tabelaFuncionariosModel);
 
+        DefaultTableCellRenderer headerRenderer = new CustomHeaderRenderer();
+        for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+        }
+
         table.setDefaultRenderer(Object.class, new LinhaListradas());
+        tabelaFuncionariosModel.configurarTamanhoColunas(table);
 
         JScrollPane scrollPane = new JScrollPane(table);
 

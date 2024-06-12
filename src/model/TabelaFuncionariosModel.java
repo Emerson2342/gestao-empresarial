@@ -1,6 +1,8 @@
 package model;
 
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableColumnModel;
 import java.util.List;
 
 public class TabelaFuncionariosModel extends AbstractTableModel {
@@ -53,6 +55,21 @@ public class TabelaFuncionariosModel extends AbstractTableModel {
                 return funcionario.getEndereco();
             default:
                 return null;
+        }
+    }
+
+    public void configurarTamanhoColunas(JTable table) {
+        TableColumnModel columnModel = table.getColumnModel();
+
+        columnModel.getColumn(0).setPreferredWidth(30);
+
+        CustomTableCellRenderer renderer = new CustomTableCellRenderer();
+        renderer.setHorizontalAlignment(SwingConstants.CENTER);
+        for (int i = 0; i < columnModel.getColumnCount(); i++) {
+            if(i ==3){
+                continue;
+            }
+            columnModel.getColumn(i).setCellRenderer(renderer);
         }
     }
     @Override

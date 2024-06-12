@@ -2,11 +2,13 @@ package view;
 
 import DAO.CargoDAO;
 import model.CargoModel;
+import model.CustomHeaderRenderer;
 import model.LinhaListradas;
 import model.TabelaCargoModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,7 +32,13 @@ public class JListaCargos extends JFrame {
 
         TabelaCargoModel tabelaCargoModel = new TabelaCargoModel(cargos);
         table = new JTable(tabelaCargoModel);
+
+        DefaultTableCellRenderer headerRenderer = new CustomHeaderRenderer();
+        for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+        }
         table.setDefaultRenderer(Object.class, new LinhaListradas());
+        tabelaCargoModel.configurarTamanhoColunas(table);
 
         JScrollPane ScrollPane = new JScrollPane(table);
 

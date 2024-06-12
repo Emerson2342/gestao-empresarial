@@ -1,12 +1,15 @@
 package view;
 
 import DAO.PortariaDAO;
+import model.CustomHeaderRenderer;
 import model.VisitanteModel;
 import model.LinhaListradas;
 import model.TabelaModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,9 +27,9 @@ public class JRegistroPortaria extends JFrame {
         setLocationRelativeTo(null);
 
 
-
         RegistroPortaria = new JPanel(new BorderLayout());
         setContentPane(RegistroPortaria);
+
 
         //cria a lista vindo do banco de dados
         List<VisitanteModel> visitantes = new PortariaDAO().listarVisitantes();
@@ -35,19 +38,27 @@ public class JRegistroPortaria extends JFrame {
 
         //cria a tabela com o modelo
         table = new JTable(tabelaModel);
+
+        //adiciona formatação customizadas criadas
+        DefaultTableCellRenderer headerRenderer = new CustomHeaderRenderer();
+        for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+        }
         //edita as linhas da tabela
         table.setDefaultRenderer(Object.class, new LinhaListradas());
+
+        tabelaModel.configurarTamanhoColunas(table);
+
+
         //adiciona a tabela no JScrollPane
         JScrollPane scrollPane = new JScrollPane(table);
 
         //adicionar o JScrollPane ao RegistroPortaria
-        RegistroPortaria.add(scrollPane);
-
+        add(scrollPane);
         RegistroPortaria.setBorder(new EmptyBorder(25, 15, 55, 15));
 
         setVisible(true);
         table.setModel(tabelaModel);
-
 
 
         btnFechar.addActionListener(new ActionListener() {
@@ -57,7 +68,7 @@ public class JRegistroPortaria extends JFrame {
             }
         });
         RegistroPortaria.add(btnFechar, BorderLayout.PAGE_END);
-      btnFechar.setPreferredSize(new Dimension(0, 50));
+        btnFechar.setPreferredSize(new Dimension(0, 50));
     }
 
     public static void main(String[] args) {

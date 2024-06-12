@@ -17,7 +17,7 @@ public class JMain extends JFrame {
         setContentPane(MainPanel);
         setTitle("Gestão Empresarial");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(700, 500);
+        setSize(500, 500);
         setLocationRelativeTo(null);
         setVisible(true);
 
@@ -31,7 +31,6 @@ public class JMain extends JFrame {
                 jportaria.setLocationRelativeTo(jportaria);
             }
         });
-
 
         dpButton.addActionListener(new ActionListener() {
             @Override
